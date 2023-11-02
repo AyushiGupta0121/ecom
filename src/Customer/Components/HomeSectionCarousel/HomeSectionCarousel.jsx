@@ -7,7 +7,7 @@ import { mens_kurta } from "../../../Data/mens_kurta";
 const HomeSectionCarousel = ({data,sectionName}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const responsive = {
-    0: { items: 2 },
+    0: { items: 1 },
     720: { items: 3 },
     1024: { items: 5 },
   };

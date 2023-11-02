@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
+
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
@@ -159,7 +146,7 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white z-50">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -370,7 +357,7 @@ export default function Navigation() {
               </div>
 
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch ">
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
@@ -398,7 +385,7 @@ export default function Navigation() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                           >
-                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500 z-50">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
